@@ -4,33 +4,48 @@
             "name": "id",
             "type": "Edm.String",
             "key": true,
-            "filterable": true
+            "searchable": false,
+            "filterable": false,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": false
         },
         {
             "name": "sourcepage",
             "type": "Edm.String",
-            "searchable": true,
-            "retrievable": true
+            "searchable": false,
+            "filterable": true,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": true
         },
         {
             "name": "content",
             "type": "Edm.String",
             "searchable": true,
+            "filterable": false,
             "retrievable": true,
+            "sortable": false,
+            "facetable": false,
             "analyzer": "ja.lucene"
         },
         {
             "name": "category",
             "type": "Collection(Edm.String)",
-            "filterable": true,
             "searchable": true,
-            "retrievable": true
+            "filterable": true,
+            "retrievable": true,
+            "sortable": true,
+            "facetable": true
         },
         {
             "name": "contentVector",
             "type": "Collection(Edm.Single)",
             "searchable": true,
+            "filterable": false,
             "retrievable": true,
+            "sortable": false,
+            "facetable": false,
             "dimensions": 1536,
             "vectorSearchConfiguration": "my-vector-config"
         }

@@ -1,0 +1,39 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "type": "Edm.String",
+            "key": true,
+            "filterable": false,
+            "retrievable": true,
+            "searchable": false,
+            "sortable": false,
+            "facetable": false
+        },
+        {
+            "name": "sourcepage",
+            "type": "Edm.String",
+            "searchable": false,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": true,
+            "filterable": true
+        },
+        {
+            "name": "content",
+            "type": "Edm.String",
+            "searchable": true,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": false,
+            "filterable": false,
+            "analyzer": "ja.lucene"
+        }
+    ],
+    "corsOptions": {
+        "allowedOrigins": [
+            "*"
+        ],
+        "maxAgeInSeconds": 60
+    }
+}
