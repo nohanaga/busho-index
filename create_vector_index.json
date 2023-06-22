@@ -35,7 +35,7 @@
             "searchable": true,
             "filterable": true,
             "retrievable": true,
-            "sortable": true,
+            "sortable": false,
             "facetable": true
         },
         {
