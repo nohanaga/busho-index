@@ -1,0 +1,92 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "type": "Edm.String",
+            "key": true,
+            "searchable": false,
+            "filterable": false,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": false
+        },
+        {
+            "name": "sourcepage",
+            "type": "Edm.String",
+            "searchable": false,
+            "filterable": true,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": true
+        },
+        {
+            "name": "content",
+            "type": "Edm.String",
+            "searchable": true,
+            "filterable": false,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": false,
+            "analyzer": "ja.lucene"
+        },
+        {
+            "name": "category",
+            "type": "Collection(Edm.String)",
+            "searchable": true,
+            "filterable": true,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": true
+        },
+        {
+            "name": "contentVector",
+            "type": "Collection(Edm.Single)",
+            "searchable": true,
+            "filterable": false,
+            "retrievable": true,
+            "sortable": false,
+            "facetable": false,
+            "dimensions": 1536,
+            "vectorSearchConfiguration": "my-vector-config"
+        }
+    ],
+    "corsOptions": {
+        "allowedOrigins": [
+            "*"
+        ],
+        "maxAgeInSeconds": 60
+    },
+    "vectorSearch": {
+        "algorithmConfigurations": [
+            {
+                "name": "my-vector-config",
+                "kind": "hnsw",
+                "hnswParameters": {
+                    "m": 4,
+                    "efConstruction": 400,
+                    "metric": "cosine",
+                    "efSearch": 500
+                }
+            }
+        ]
+    },
+    "semantic": {
+        "defaultConfiguration": null,
+        "configurations": [
+          {
+            "name": "config1",
+            "prioritizedFields": {
+              "titleField": {
+                "fieldName": "sourcepage"
+              },
+              "prioritizedContentFields": [
+                {
+                  "fieldName": "content"
+                }
+              ],
+              "prioritizedKeywordsFields": []
+            }
+          }
+        ]
+      }
+}
