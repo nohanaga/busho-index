@@ -22,3 +22,6 @@ Azure AI Search の様々な検索を行うために、以下を行うサンプ�
 
 ## 4. [Semantic_Chunker.ipynb](Semantic_Chunker.ipynb)
 Azure AI Document Intelligence と LangChain を使用してセマンティックチャンキングを行うサンプル
+
+## 5. [Corrective RAG (CRAG)](crag_azure_ai_search_bing.ipynb)
+Corrective RAG (CRAG) のサンプル
